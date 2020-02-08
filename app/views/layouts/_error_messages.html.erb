@@ -1,0 +1,10 @@
+<% if record.try(:errors).try(:any?) %>
+  <div id="error_explanation">
+    <h2><%= record.errors.count %>errors prohibited this obj from being saved:</h2>
+    <ul>
+      <% record.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
