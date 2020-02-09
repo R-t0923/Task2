@@ -24,6 +24,23 @@
 						<td><%= link_to @book.title, @book %></td>
 						<td><%= @book.body %></td>
 						<td>
+							<% if @book.favorited_by?(current_user) %>
+								<li>
+									<%= link_to  book_favorites_path(@book), method: :delete do %>
+										<i class="glyphicon glyphicon-heart" aria-hidden="true" style="color: red;"></i>
+										<%= @book.favorites.count %>
+									<% end %>
+								</li>
+							<% else %>
+								<li>
+									<%= link_to book_favorites_path(@book), method: :post do %>
+										<i class="glyphicon glyphicon-heart" aria-hidden="true"></i>
+										<%= @book.favorites.count %> 
+									<% end %>
+								</li>
+							<% end %>
+						</td>
+						<td>
 							<% if @book.user == current_user %>
 								<%= link_to "Edit",edit_book_path(@book), class: "btn-sm btn-success edit_book_#{@book.id}" %>
 							<% end %>
