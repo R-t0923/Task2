@@ -21,6 +21,7 @@
 						<th>Title</th>
 						<th>Opinion</th>
 						<th></th>
+						<th></th>
 						<th colspan="3"></th>
 					</tr>
 				</thead>
@@ -47,10 +48,13 @@
 								<li>
 									<%= link_to book_favorites_path(book), method: :post do %>
 										<i class="glyphicon glyphicon-heart" aria-hidden="true"></i>
-										<%= book.favorites.count %> 
+									<%= book.favorites.count %> 
 									<% end %>
 								</li>
 							<% end %>
+						</td>
+						<td>
+							<h6 class="comment-count">コメント数：<%= book.book_comments.count %></h6>
 						</td>
 					</tr>
 					<% end %>
