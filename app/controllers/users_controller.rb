@@ -24,7 +24,21 @@ class UsersController < ApplicationController
 		else
 			render "edit"
 		end
-  end
+	end
+	
+	def folower
+		@user = User.find(params[:user_id])
+		@users = @user.followers
+		@book = Book.new
+	end
+
+	def folow
+		@user = User.find(params[:user_id])
+		@users = @user.followings
+		@book = Book.new
+	end
+
+
 
   private
   def user_params
