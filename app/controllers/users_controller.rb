@@ -26,13 +26,13 @@ class UsersController < ApplicationController
 		end
 	end
 	
-	def folower
+	def follower
 		@user = User.find(params[:user_id])
 		@users = @user.followers
 		@book = Book.new
 	end
 
-	def folow
+	def follow
 		@user = User.find(params[:user_id])
 		@users = @user.followings
 		@book = Book.new

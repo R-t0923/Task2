@@ -19,12 +19,12 @@
 				<td><%= attachment_image_tag(user, :profile_image, :fill, 50, 50, fallback: "no-image-mini.jpg") %></td>
 				<td><%= user.name%></td>
 				<td>
-					<h6 class="folower-count">
+					<h6 class="follower-count">
 						フォロー数：<%= user.followings.count %>
 					</h6>
 				</td>
 				<td>
-					<h6 class="folower-count">
+					<h6 class="follower-count">
 					フォロワー数：<%= user.followers.count %>
 					</h6>
 				</td>

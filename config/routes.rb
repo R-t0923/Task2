@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   get 'home/about' => 'home#about',as:"home_about"
   get 'search' => 'search#search'
   resources :users,only: [:show,:index,:edit,:update] do
-  get :folower
-  get 'folow' =>'users#folow'
+  get :follower
+  get 'follow' =>'users#follow'
   end
   resources :books do
     resource :favorites, only: [:create, :destroy]
